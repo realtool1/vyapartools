@@ -1,187 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markup Calculator - VyaparTools</title>
-    <meta name="description" content="Calculate selling price, gross profit amount, and profit percentage from cost price and markup percentage.">
-    
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f4f6f8;
-            color: #333;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: #0056b3;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-
-        header a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        header a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 30px auto;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            flex: 1;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            background-color: #28a745;
-            color: #fff;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn:hover {
-            background-color: #218838;
-        }
-
-        .result-box {
-            margin-top: 25px;
-            padding: 15px;
-            background-color: #e9ecef;
-            border-radius: 6px;
-            display: none;
-        }
-
-        .result-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid #dee2e6;
-        }
-
-        .result-row:last-child {
-            border-bottom: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #0056b3;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #e9ecef;
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markup Calculator – Calculate Retail Prices | VyaparTools</title>
+  <meta name="description" content="Calculate unit selling price and profit totals based on item cost and desired markup percentage.">
+  <link rel="canonical" href="https://realtool1.github.io/vyapartools/markup-calculator.html">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>Markup Calculator</h1>
-        <a href="index.html">← Back to Home</a>
-    </header>
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Vyapar<span>Tools</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#tools">Calculators</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
 
-    <div class="container">
-        <div class="form-group">
-            <label for="costPrice">Cost Price (₹)</label>
-            <input type="number" id="costPrice" placeholder="e.g. 1000" step="any">
-        </div>
-
-        <div class="form-group">
-            <label for="markupPercent">Markup Percentage (%)</label>
-            <input type="number" id="markupPercent" placeholder="e.g. 25" step="any">
-        </div>
-
-        <button class="btn" onclick="calculateMarkup()">Calculate Selling Price</button>
-
-        <div class="result-box" id="resultBox">
-            <div class="result-row">
-                <span>Profit Amount:</span>
-                <span id="resProfit">₹0.00</span>
-            </div>
-            <div class="result-row">
-                <span>Gross Profit Margin:</span>
-                <span id="resMargin">0%</span>
-            </div>
-            <div class="result-row">
-                <span>Selling Price:</span>
-                <span id="resSellingPrice">₹0.00</span>
-            </div>
-        </div>
+  <main class="container">
+    <div style="padding-top: 2rem;">
+      <a href="index.html" style="font-size: 0.875rem; color: var(--text-subtle); text-decoration: none;">← Back to All Tools</a>
+      <h1 style="font-size: 2rem; font-weight: 700; margin-top: 0.5rem; letter-spacing: -0.02em;">Markup Calculator</h1>
+      <p style="color: var(--text-muted);">Set target product selling prices based on unit purchase cost and markup percentage.</p>
     </div>
 
-    <footer>
-        &copy; VyaparTools - Simple & Free Business Tools
-    </footer>
+    <div class="calc-wrapper">
+      <div class="calc-grid">
+        <!-- INPUT PANEL -->
+        <div class="calc-inputs">
+          <div class="form-group">
+            <label for="costPrice">Unit Cost Price (₹)</label>
+            <input type="number" id="costPrice" class="input-control" placeholder="e.g. 1000" value="1000" min="0" step="any">
+          </div>
 
-    <script>
-        function calculateMarkup() {
-            const cost = parseFloat(document.getElementById('costPrice').value);
-            const markup = parseFloat(document.getElementById('markupPercent').value);
+          <div class="form-group">
+            <label for="markupPercent">Markup Percentage (%)</label>
+            <input type="number" id="markupPercent" class="input-control" placeholder="e.g. 25" value="25" min="0" step="any">
+          </div>
+        </div>
 
-            if (isNaN(cost) || isNaN(markup) || cost <= 0 || markup < 0) {
-                alert('Please enter valid Cost Price and Markup Percentage.');
-                return;
-            }
+        <!-- RESULT PANEL -->
+        <div class="calc-results">
+          <div>
+            <div class="result-hero">
+              <div class="result-label">Recommended Selling Price</div>
+              <div class="result-value" id="sellingPriceDisplay">₹1,250.00</div>
+            </div>
 
-            const profit = (cost * markup) / 100;
-            const sellingPrice = cost + profit;
-            const margin = (profit / sellingPrice) * 100;
+            <div class="breakdown-list">
+              <div class="breakdown-item">
+                <span>Profit Amount</span>
+                <span id="profitDisplay">₹250.00</span>
+              </div>
+              <div class="breakdown-item">
+                <span>Equivalent Profit Margin</span>
+                <span id="marginDisplay">20.00%</span>
+              </div>
+            </div>
+          </div>
 
-            document.getElementById('resProfit').innerText = '₹' + profit.toFixed(2);
-            document.getElementById('resMargin').innerText = margin.toFixed(2) + '%';
-            document.getElementById('resSellingPrice').innerText = '₹' + sellingPrice.toFixed(2);
+          <div class="calc-actions">
+            <button class="btn btn-primary" style="flex:1;" id="copyBtn">Copy Summary</button>
+            <button class="btn btn-secondary" id="resetBtn">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            document.getElementById('resultBox').style.display = 'block';
+    <!-- EDUCATIONAL SECTION -->
+    <section class="edu-block">
+      <h2>How Product Markup Operates</h2>
+      <p>Markup is the cost multiplier used by retailers to cover operational overheads and secure a profit margin.</p>
+      <p><code>Selling Price = Cost Price + (Cost Price × (Markup % / 100))</code></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="text-align: center; color: var(--text-subtle); font-size: 0.875rem;">
+      <p>&copy; 2026 VyaparTools. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cpInput = document.getElementById('costPrice');
+      const markupInput = document.getElementById('markupPercent');
+
+      const sellingPriceDisplay = document.getElementById('sellingPriceDisplay');
+      const profitDisplay = document.getElementById('profitDisplay');
+      const marginDisplay = document.getElementById('marginDisplay');
+
+      function calculate() {
+        const cp = parseFloat(cpInput.value);
+        const m = parseFloat(markupInput.value);
+
+        if (isNaN(cp) || isNaN(m) || cp < 0 || m < 0) {
+          sellingPriceDisplay.textContent = '₹0.00';
+          profitDisplay.textContent = '₹0.00';
+          marginDisplay.textContent = '0.00%';
+          return;
         }
-    </script>
+
+        const profit = (cp * m) / 100;
+        const sp = cp + profit;
+        const margin = sp > 0 ? (profit / sp) * 100 : 0;
+
+        sellingPriceDisplay.textContent = formatCurrency(sp);
+        profitDisplay.textContent = formatCurrency(profit);
+        marginDisplay.textContent = margin.toFixed(2) + '%';
+      }
+
+      cpInput.addEventListener('input', calculate);
+      markupInput.addEventListener('input', calculate);
+
+      document.getElementById('copyBtn').addEventListener('click', (e) => {
+        const text = `Markup Breakdown:\nCost: ₹${cpInput.value}\nMarkup: ${markupInput.value}%\nSelling Price: ${sellingPriceDisplay.textContent}\nProfit: ${profitDisplay.textContent}`;
+        copyToClipboard(text, e.target);
+      });
+
+      document.getElementById('resetBtn').addEventListener('click', () => {
+        cpInput.value = '1000';
+        markupInput.value = '25';
+        calculate();
+      });
+
+      calculate();
+    });
+  </script>
 </body>
 </html>
