@@ -1,1 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>GST Calculator - Free GST Calculator India | VyaparTools</title>
+
+    <meta name="description"
+        content="Free GST calculator for India. Calculate GST amount, CGST, SGST, IGST and final price instantly.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 18px 6%;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #111827;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #667085;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: #2563eb;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .secondary {
+            background: #e5e7eb;
+            color: #111827;
+        }
+
+        .result {
+            display: none;
+            background: #eff6ff;
+            border-radius: 14px;
+            padding: 22px;
+        }
+
+        .result h2 {
+            margin-bottom: 18px;
+            font-size: 22px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 11px 0;
+            border-bottom: 1px solid #dbeafe;
+        }
+
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .total {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .info {
+            margin-top: 30px;
+            color: #667085;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            background: #111827;
+            color: #d1d5db;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">
+        Vyapar<span>Tools</span>
+    </a>
+</header>
+
+<main class="container">
+
+    <a href="index.html" class="back">← Back to Home</a>
+
+    <div class="card">
+
+        <h1>GST Calculator</h1>
+
+        <p class="subtitle">
+            Calculate GST, CGST, SGST, IGST and final price instantly.
+        </p>
+
+        <label for="amount">Amount (₹)</label>
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Example: 10000"
+            min="0"
+            step="0.01"
+        >
+
+        <label for="gstRate">GST Rate</label>
+
+        <select id="gstRate">
+            <option value="5">5%</option>
+            <option value="12">12%</option>
+            <option value="18" selected>18%</option>
+            <option value="28">28%</option>
+        </select>
+
+        <label for="calculationType">Calculation Type</label>
+
+        <select id="calculationType">
+            <option value="exclusive">
+                GST Exclusive — Add GST to price
+            </option>
+
+            <option value="inclusive">
+                GST Inclusive — Remove GST from price
+            </option>
+        </select>
+
+        <div class="buttons">
+
+            <button class="primary" onclick="calculateGST()">
+                Calculate GST
+            </button>
+
+            <button class="secondary" onclick="resetCalculator()">
+                Reset
+            </button>
+
+        </div>
+
+        <div class="result" id="result">
+
+            <h2>Calculation Result</h2>
+
+            <div class="row">
+                <span>Original Amount</span>
+                <strong id="originalAmount">₹0.00</strong>
+            </div>
+
+            <div class="row">
+                <span>GST Amount</span>
+                <strong id="gstAmount">₹0.00</strong>
+            </div>
+
+            <div class="row">
+                <span>CGST</span>
+                <strong id="cgst">₹0.00</strong>
+            </div>
+
+            <div class="row">
+                <span>SGST</span>
+                <strong id="sgst">₹0.00</strong>
+            </div>
+
+            <div class="row">
+                <span>GST Rate</span>
+                <strong id="displayRate">18%</strong>
+            </div>
+
+            <div class="row total">
+                <span>Final Amount</span>
+                <strong id="finalAmount">₹0.00</strong>
+            </div>
+
+        </div>
+
+        <div class="info">
+
+            <strong>How it works:</strong>
+
+            <br>
+
+            GST Exclusive:
+            GST is added to the entered price.
+
+            <br>
+
+            GST Inclusive:
+            The entered price already contains GST,
+            so the calculator separates the GST amount.
+
+            <br><br>
+
+            For intra-state transactions, GST is generally divided
+            equally between CGST and SGST. IGST is used for applicable
+            inter-state transactions.
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    © 2026 VyaparTools — Free Business Tools for India
+</footer>
+
+
+<script>
+
+function formatRupee(number) {
+    return "₹" + number.toLocaleString("en-IN", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+
+function calculateGST() {
+
+    const amount =
+        parseFloat(document.getElementById("amount").value);
+
+    const gstRate =
+        parseFloat(document.getElementById("gstRate").value);
+
+    const calculationType =
+        document.getElementById("calculationType").value;
+
+
+    if (isNaN(amount) || amount < 0) {
+
+        alert("Please enter a valid amount.");
+
+        return;
+    }
+
+
+    let originalAmount;
+    let gstAmount;
+    let finalAmount;
+
+
+    if (calculationType === "exclusive") {
+
+        originalAmount = amount;
+
+        gstAmount =
+            amount * gstRate / 100;
+
+        finalAmount =
+            amount + gstAmount;
+
+    } else {
+
+        finalAmount = amount;
+
+        gstAmount =
+            amount * gstRate / (100 + gstRate);
+
+        originalAmount =
+            amount - gstAmount;
+    }
+
+
+    const cgst =
+        gstAmount / 2;
+
+    const sgst =
+        gstAmount / 2;
+
+
+    document.getElementById("originalAmount").textContent =
+        formatRupee(originalAmount);
+
+    document.getElementById("gstAmount").textContent =
+        formatRupee(gstAmount);
+
+    document.getElementById("cgst").textContent =
+        formatRupee(cgst);
+
+    document.getElementById("sgst").textContent =
+        formatRupee(sgst);
+
+    document.getElementById("displayRate").textContent =
+        gstRate + "%";
+
+    document.getElementById("finalAmount").textContent =
+        formatRupee(finalAmount);
+
+
+    document.getElementById("result").style.display =
+        "block";
+}
+
+
+function resetCalculator() {
+
+    document.getElementById("amount").value = "";
+
+    document.getElementById("gstRate").value = "18";
+
+    document.getElementById("calculationType").value =
+        "exclusive";
+
+    document.getElementById("result").style.display =
+        "none";
+}
+
+</script>
+
+</body>
+</html>
