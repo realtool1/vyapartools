@@ -1,105 +1,313 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VyaparTools — Free Business Calculators & Tools</title>
-<meta name="description" content="Free GST, profit margin, discount, markup and invoice tools for Indian businesses. Fast, simple and easy to use.">
-<link rel="canonical" href="https://realtool1.github.io/vyapartools/">
-<meta name="theme-color" content="#2563eb">
+<title>VyaparTools — Free GST, Invoice, Discount & Profit Calculators for Indian Business</title>
+<meta name="description" content="Free online business calculators for Indian shopkeepers, sellers and freelancers. GST calculator, GST invoice generator, discount calculator, markup and profit margin calculator — fast, accurate, no signup.">
+<meta name="keywords" content="gst calculator, gst invoice generator, discount calculator, markup calculator, profit margin calculator, india business tools">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://vyapartools.example/index.html">
+<meta name="theme-color" content="#4f46e5">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="VyaparTools — Free Business Calculators for Indian Business">
+<meta property="og:description" content="GST, invoice, discount, markup and profit margin calculators. Free, fast and accurate.">
+<meta property="og:url" content="https://vyapartools.example/index.html">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%234f46e5'/><text y='72' x='50' text-anchor='middle' font-size='62' font-family='sans-serif' fill='white'>₹</text></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "VyaparTools",
+  "url": "https://vyapartools.example/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://vyapartools.example/index.html?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 </head>
 <body>
-<header class="site-header">
-  <div class="container nav-container">
-    <a class="brand" href="index.html" aria-label="VyaparTools home"><span class="brand-mark">V</span><span>Vyapar<span>Tools</span></span></a>
-    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-      <a href="#tools">Tools</a><a href="#why">Why VyaparTools</a><a href="#faq">FAQ</a>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="VyaparTools home">
+      <span class="brand-mark" aria-hidden="true">₹</span>
+      <span class="brand-text">Vyapar<strong>Tools</strong></span>
+    </a>
+
+    <nav class="nav" id="primaryNav" aria-label="Primary navigation">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="gst-calculator.html">GST</a>
+      <a class="nav-link" href="gst-invoice-generator.html">Invoice</a>
+      <a class="nav-link" href="discount-calculator.html">Discount</a>
+      <a class="nav-link" href="markup-calculator.html">Markup</a>
+      <a class="nav-link" href="profit-margin-calculator.html">Profit Margin</a>
     </nav>
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+
+    <div class="header-actions">
+      <button class="icon-btn" type="button" data-search-open aria-label="Search tools" title="Search (Ctrl + K)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+      </button>
+
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+        <svg class="ico ico-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        <svg class="ico ico-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+
+      <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+        <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main>
-<section class="hero">
-  <div class="container hero-inner">
-    <div class="eyebrow"><span class="status-dot"></span> Free tools for modern businesses</div>
-    <h1>Run your business with <span>better tools.</span></h1>
-    <p class="hero-copy">Simple calculators and business utilities that help you price products, understand GST, calculate profit and create invoices — without complicated software.</p>
-    <div class="hero-search">
-      <span aria-hidden="true">⌕</span>
-      <input id="globalSearch" type="search" placeholder="Search a tool — GST, profit, discount..." autocomplete="off" aria-label="Search tools">
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="pill"><span class="dot"></span> 100% Free · No Signup · Works Offline</span>
+      <h1>Business calculators that <span class="grad">actually save you money</span></h1>
+      <p class="hero-sub">
+        GST, invoices, discounts, markup aur profit margin — sab kuch ek jagah.
+        Accurate results, instant calculation, aur ek clean invoice print. Banaya gaya hai
+        Indian shopkeepers, sellers aur freelancers ke liye.
+      </p>
+
+      <div class="hero-search">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+        <input id="toolSearch" type="search" placeholder="Search a tool… e.g. GST, invoice, margin" aria-label="Search tools" autocomplete="off">
+        <kbd class="kbd-hint">Ctrl K</kbd>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="gst-calculator.html">Start with GST Calculator</a>
+        <a class="btn btn-outline" href="gst-invoice-generator.html">Create an Invoice</a>
+      </div>
+
+      <div class="hero-stats">
+        <div><strong>5</strong><span>Live tools</span></div>
+        <div><strong>0₹</strong><span>Forever free</span></div>
+        <div><strong>100%</strong><span>Client-side</span></div>
+      </div>
     </div>
-    <div class="hero-points"><span>✓ Free to use</span><span>✓ No signup</span><span>✓ Works on mobile</span></div>
-  </div>
-</section>
+  </section>
 
-<section class="tools-section" id="tools">
-<div class="container">
-  <div class="section-heading">
-    <div><div class="section-kicker">TOOLKIT</div><h2>Business tools</h2><p>Everything you need for everyday pricing, tax and business calculations.</p></div>
-  </div>
-  <div class="tool-grid">
+  <!-- ================= TOOLS ================= -->
+  <section class="section" id="tools">
+    <div class="container">
+      <header class="section-head">
+        <h2>All tools</h2>
+        <p>Har tool live hai — koi waitlist nahi, koi login nahi.</p>
+      </header>
 
-    <a class="tool-card tool-card-featured" href="gst-calculator.html">
-      <div class="tool-card-top"><span class="tool-icon">₹</span><span class="card-badge">GST & TAX</span></div>
-      <h3>GST Calculator</h3><p>Add or remove GST from any amount and see the tax breakdown instantly.</p><span class="tool-action">Open calculator <span>→</span></span>
-    </a>
+      <div class="chips" role="tablist" aria-label="Filter tools by category">
+        <button class="chip is-active" data-filter-cat="all" type="button">All</button>
+        <button class="chip" data-filter-cat="Tax" type="button">Tax &amp; GST</button>
+        <button class="chip" data-filter-cat="Pricing" type="button">Pricing &amp; Profit</button>
+      </div>
 
-    <a class="tool-card" href="profit-margin-calculator.html">
-      <div class="tool-card-top"><span class="tool-icon">%</span><span class="card-badge">FINANCE</span></div>
-      <h3>Profit Margin Calculator</h3><p>Calculate gross profit, profit margin and markup from cost and selling price.</p><span class="tool-action">Open calculator <span>→</span></span>
-    </a>
+      <div class="tool-grid" id="toolGrid">
 
-    <a class="tool-card" href="discount-calculator.html">
-      <div class="tool-card-top"><span class="tool-icon">%</span><span class="card-badge">SALES</span></div>
-      <h3>Discount Calculator</h3><p>Calculate discount amount and final selling price quickly and accurately.</p><span class="tool-action">Open calculator <span>→</span></span>
-    </a>
+        <a class="tool-card" href="gst-calculator.html"
+           data-cat="Tax" data-title="GST Calculator"
+           data-keywords="gst tax cgst sgst igst inclusive exclusive reverse tax rate">
+          <span class="tool-icon" aria-hidden="true">🧾</span>
+          <h3>GST Calculator</h3>
+          <p>Add ya remove GST instantly. CGST/SGST/IGST ka full breakdown ek hi screen par.</p>
+          <span class="tool-tag">Tax</span>
+        </a>
 
-    <a class="tool-card" href="markup-calculator.html">
-      <div class="tool-card-top"><span class="tool-icon">↗</span><span class="card-badge">PRICING</span></div>
-      <h3>Markup Calculator</h3><p>Turn your cost price into a selling price using your desired markup percentage.</p><span class="tool-action">Open calculator <span>→</span></span>
-    </a>
+        <a class="tool-card" href="gst-invoice-generator.html"
+           data-cat="Tax" data-title="GST Invoice Generator"
+           data-keywords="invoice bill gstin hsn print tax invoice generator">
+          <span class="tool-icon" aria-hidden="true">📄</span>
+          <h3>GST Invoice Generator</h3>
+          <p>Professional GST invoice banao, save karo aur seedha print ya PDF me nikaalo.</p>
+          <span class="tool-tag">Tax</span>
+        </a>
 
-    <a class="tool-card" href="gst-invoice-generator.html">
-      <div class="tool-card-top"><span class="tool-icon">▤</span><span class="card-badge">INVOICING</span></div>
-      <h3>GST Invoice Generator</h3><p>Create a clean GST invoice, calculate tax and print or save it as a PDF.</p><span class="tool-action">Create invoice <span>→</span></span>
-    </a>
+        <a class="tool-card" href="discount-calculator.html"
+           data-cat="Pricing" data-title="Discount Calculator"
+           data-keywords="discount sale off percent mrp price reduce flat">
+          <span class="tool-icon" aria-hidden="true">🏷️</span>
+          <h3>Discount Calculator</h3>
+          <p>Percent off, flat off aur stacked discount — final price aur savings turant.</p>
+          <span class="tool-tag">Pricing</span>
+        </a>
 
-  </div>
-  <div class="empty-state" id="searchEmpty" hidden><strong>No matching tools</strong><p>Try “GST”, “profit”, “discount” or “invoice”.</p></div>
-</div>
-</section>
+        <a class="tool-card" href="markup-calculator.html"
+           data-cat="Pricing" data-title="Markup Calculator"
+           data-keywords="markup cost selling price profit margin price">
+          <span class="tool-icon" aria-hidden="true">📈</span>
+          <h3>Markup Calculator</h3>
+          <p>Cost aur markup se selling price nikalo — ya ulta markup percentage dhoondo.</p>
+          <span class="tool-tag">Pricing</span>
+        </a>
 
-<section class="why-section" id="why">
-<div class="container">
-  <div class="section-heading centered"><div class="section-kicker">BUILT FOR SPEED</div><h2>Business calculations, without the clutter.</h2><p>Designed to be clear enough for a first-time user and fast enough for everyday work.</p></div>
-  <div class="benefit-grid">
-    <article class="benefit"><span>01</span><h3>Instant results</h3><p>Enter your numbers and get the result immediately.</p></article>
-    <article class="benefit"><span>02</span><h3>Made for India</h3><p>Indian rupee formatting and GST-focused business tools.</p></article>
-    <article class="benefit"><span>03</span><h3>Works everywhere</h3><p>Responsive pages that work on phones, tablets and desktops.</p></article>
-  </div>
-</div>
-</section>
+        <a class="tool-card" href="profit-margin-calculator.html"
+           data-cat="Pricing" data-title="Profit Margin Calculator"
+           data-keywords="margin profit markup cost revenue net gross">
+          <span class="tool-icon" aria-hidden="true">💰</span>
+          <h3>Profit Margin Calculator</h3>
+          <p>Margin vs markup ka confusion khatam. Profit per unit aur total profit dekho.</p>
+          <span class="tool-tag">Pricing</span>
+        </a>
 
-<section class="faq-section" id="faq">
-<div class="container narrow">
-  <div class="section-heading centered"><div class="section-kicker">FAQ</div><h2>Frequently asked questions</h2></div>
-  <details><summary>Are VyaparTools calculators free?</summary><p>Yes. The tools currently available on VyaparTools are designed to be free to use.</p></details>
-  <details><summary>Do I need to create an account?</summary><p>No account is required for the current calculators.</p></details>
-  <details><summary>Can I use the tools on my phone?</summary><p>Yes. The website is responsive and designed for mobile screens as well as desktop browsers.</p></details>
-</div>
-</section>
+      </div>
+
+      <p class="empty-state" id="toolEmpty" hidden>Koi tool nahi mila. Doosra keyword try kijiye.</p>
+    </div>
+  </section>
+
+  <!-- ================= WHY ================= -->
+  <section class="section section-alt">
+    <div class="container">
+      <header class="section-head">
+        <h2>Why VyaparTools?</h2>
+        <p>Simple rakha hai — kyunki business already complicated hai.</p>
+      </header>
+
+      <div class="feature-grid">
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">⚡</span>
+          <h3>Instant Results</h3>
+          <p>Type karte hi calculate. Koi "Calculate" button dhundhne ki zarurat nahi.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">🔒</span>
+          <h3>Private by Design</h3>
+          <p>Saara calculation aapke browser me hota hai. Data kahin upload nahi hota.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">📱</span>
+          <h3>Mobile First</h3>
+          <p>Dukaan ke counter par phone se use karo — layout perfect fit hota hai.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">🌙</span>
+          <h3>Dark Mode</h3>
+          <p>Raat ko billing karte ho? Aankhon par zor nahi padega.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">🧮</span>
+          <h3>Accurate Formulas</h3>
+          <p>Standard GST aur accounting formulas — round-off sahi jagah par.</p>
+        </article>
+        <article class="feature">
+          <span class="feature-icon" aria-hidden="true">🖨️</span>
+          <h3>Print Ready</h3>
+          <p>Invoice seedha A4 par print karo ya PDF me save karo. Ek click.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section" id="faq">
+    <div class="container narrow">
+      <header class="section-head">
+        <h2>Frequently asked questions</h2>
+      </header>
+
+      <div class="faq" data-accordion>
+        <details class="faq-item" open>
+          <summary>Kya VyaparTools bilkul free hai?</summary>
+          <div class="faq-body"><p>Haan. Saare calculators aur invoice generator 100% free hain. Na signup, na credit card, na hidden limit.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Mera data kahin save hota hai?</summary>
+          <div class="faq-body"><p>Nahi. Har calculation aapke browser me hi hota hai. Invoice generator ka data aapke device ke local storage me save hota hai — server par kuch nahi jaata.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>GST calculator kaunse rates support karta hai?</summary>
+          <div class="faq-body"><p>0%, 0.25%, 3%, 5%, 12%, 18%, 28% aur custom rate bhi. Inclusive (reverse) aur exclusive dono modes available hain.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Margin aur markup me kya difference hai?</summary>
+          <div class="faq-body"><p>Margin profit ka percentage hai <em>selling price</em> par, aur markup profit ka percentage hai <em>cost price</em> par. Dono ka apna use-case hai — hamara <a href="profit-margin-calculator.html">Profit Margin Calculator</a> dono dikhata hai.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Invoice ka PDF kaise banaun?</summary>
+          <div class="faq-body"><p>Invoice generate karke <strong>Print</strong> button dabaiye, phir print dialog me "Save as PDF" choose kijiye. Bas.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Aaj hi apna pehla invoice banao</h2>
+          <p>GST-compliant invoice, 60 seconds me. Koi account nahi chahiye.</p>
+        </div>
+        <a class="btn btn-primary btn-lg" href="gst-invoice-generator.html">Open Invoice Generator</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer class="site-footer">
-<div class="container footer-grid">
-  <div><a class="brand footer-brand" href="index.html"><span class="brand-mark">V</span><span>Vyapar<span>Tools</span></span></a><p>Simple tools for smarter everyday business.</p></div>
-  <div class="footer-col"><strong>Tools</strong><a href="gst-calculator.html">GST Calculator</a><a href="profit-margin-calculator.html">Profit Margin</a><a href="discount-calculator.html">Discount Calculator</a><a href="markup-calculator.html">Markup Calculator</a><a href="gst-invoice-generator.html">GST Invoice Generator</a></div>
-  <div class="footer-col"><strong>Explore</strong><a href="#why">Why VyaparTools</a><a href="#faq">FAQ</a><a href="#tools">All Tools</a></div>
-</div>
-<div class="container footer-bottom"><span>© 2026 VyaparTools</span><span>Free business tools</span></div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">₹</span>
+        <span class="brand-text">Vyapar<strong>Tools</strong></span>
+      </a>
+      <p>Free, fast and accurate business calculators for Indian sellers, shopkeepers and freelancers.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Calculators</h4>
+      <ul>
+        <li><a href="gst-calculator.html">GST Calculator</a></li>
+        <li><a href="discount-calculator.html">Discount Calculator</a></li>
+        <li><a href="markup-calculator.html">Markup Calculator</a></li>
+        <li><a href="profit-margin-calculator.html">Profit Margin Calculator</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Invoicing</h4>
+      <ul>
+        <li><a href="gst-invoice-generator.html">GST Invoice Generator</a></li>
+        <li><a href="gst-invoice-generator.html">Tax Invoice Format</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Site</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© <span id="year">2025</span> VyaparTools. All rights reserved.</p>
+    <p>Made in India 🇮🇳</p>
+  </div>
 </footer>
+
 <script src="app.js"></script>
 </body>
 </html>
